@@ -9,6 +9,8 @@
                 <div class="navbar-nav">
                   <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                   <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                  <a class="nav-link" href="{% url 'nowy' %}">Nowy</a>
+
                 </div>
                 <div class="navbar-nav navbar-right">
                   {% if user.is_authenticated %}

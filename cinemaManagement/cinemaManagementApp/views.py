@@ -29,7 +29,11 @@ def delete(request, list_id):
 
 @login_required
 def profile(request):
-    return render(request, 'profile.html')
+    return render(request, 'profile.html')\
+
+@login_required
+def nowy(request):
+    return render(request, 'nowy.html')
 
 
 def register(request):
