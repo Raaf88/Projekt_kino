@@ -1,3 +1,4 @@
+from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 from .models import CinemaDb
 from .forms import TaskForm, SignUpForm
@@ -29,7 +30,7 @@ def delete(request, list_id):
 
 @login_required
 def profile(request):
-    return render(request, 'profile.html')\
+    return render(request, 'profile.html')
 
 @login_required
 def nowy(request):
@@ -37,11 +38,16 @@ def nowy(request):
 
 
 def register(request):
-    if request.method == 'POST':
-        form = SignUpForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('login')
+    form = SignUpForm(request.POST)
+    if form.is_valid():
+        form.save()
+        username = form.cleaned_data.get('username')
+        password = form.cleaned_data.get('password1')
+        user = authenticate(username=username, password=password)
+        login(request, user)
+        return redirect('login')
     else:
-        form = UserCreationForm()
+        form = SignUpForm()
     return render(request, 'registration/register.html', {'form': form})
+
+
