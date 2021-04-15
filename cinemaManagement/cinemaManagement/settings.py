@@ -137,3 +137,11 @@ LOGIN_REDIRECT_URL = '/templates/profile/'
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# email verification
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = '*******@gmail.com'
+EMAIL_HOST_PASSWORD = '**********'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
