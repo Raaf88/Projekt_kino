@@ -4,39 +4,39 @@
 
 <h1>strona startowa</h1>
 
-<table class="table table-striped">
-    <tr>
-        <th>Task name</th>
-        <th>Completed</th>
-        <th>Delete?</th>
-    </tr>
-    {% for item in all_items %}
-    <tr>
-        <td>{{item.task}}</td>
-        <td>{{item.completed}}</td>
-        <td><a href="{% url 'delete' item.id %}">Usuń</a></td>
-    </tr>
-    {% endfor %}
-</table>
+<!--<table class="table table-striped">-->
+<!--    <tr>-->
+<!--        <th>Task name</th>-->
+<!--        <th>Completed</th>-->
+<!--        <th>Delete?</th>-->
+<!--    </tr>-->
+<!--    {% for item in all_items %}-->
+<!--    <tr>-->
+<!--        <td>{{item.task}}</td>-->
+<!--        <td>{{item.completed}}</td>-->
+<!--        <td><a href="{% url 'delete' item.id %}">Usuń</a></td>-->
+<!--    </tr>-->
+<!--    {% endfor %}-->
+<!--</table>-->
 
 
-<form class="mb-3" action="{% url 'home' %}" method="post">
-  {% csrf_token %}
-    <div class="mb-3">
-        <label for="task" class="form-label">Task</label><br>
-        <input type="text" name="task" placeholder="Enter task.."> <br>
-    </div>
-    <div class="mb-3">
-        <label for="priority" class="form-label">Priority</label><br>
-        <input type="text" name="priority" placeholder="Enter priority.."> <br>
-    </div>
-        <input type="submit" name="" value="Zatwierdź" class="btn btn-primary"> <br>
-    {% if messages %}
-        {% for message in messages %}
-            <h3>{{message}}</h3>
-        {% endfor %}
-    {% endif %}
-</form>
+<!--<form class="mb-3" action="{% url 'home' %}" method="post">-->
+<!--  {% csrf_token %}-->
+<!--    <div class="mb-3">-->
+<!--        <label for="task" class="form-label">Task</label><br>-->
+<!--        <input type="text" name="task" placeholder="Enter task.."> <br>-->
+<!--    </div>-->
+<!--    <div class="mb-3">-->
+<!--        <label for="priority" class="form-label">Priority</label><br>-->
+<!--        <input type="text" name="priority" placeholder="Enter priority.."> <br>-->
+<!--    </div>-->
+<!--        <input type="submit" name="" value="Zatwierdź" class="btn btn-primary"> <br>-->
+<!--    {% if messages %}-->
+<!--        {% for message in messages %}-->
+<!--            <h3>{{message}}</h3>-->
+<!--        {% endfor %}-->
+<!--    {% endif %}-->
+<!--</form>-->
 
 {% endblock %}
 

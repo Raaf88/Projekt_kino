@@ -2,12 +2,12 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
-from .models import CinemaDb
+# from .models import CinemaDb
 
 
 class TaskForm(forms.ModelForm):
     class Meta:
-        model = CinemaDb
+        # model = CinemaDb
         fields = ['task', 'priority']
 
 
