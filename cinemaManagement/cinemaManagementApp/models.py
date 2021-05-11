@@ -19,7 +19,7 @@ class Film(models.Model):
     rezyser = models.CharField(max_length=30, null=True)
     opis = models.TextField(max_length=300, null=True)
     ranking = models.FloatField()
-    plakat = models.ImageField(upload_to='images/', null=True)
+    # plakat = models.ImageField(upload_to='images/', null=True)
 
     def __str__(self):
         return "{} -> {} -> {}".format(self.tytul, self.rezyser, self.ranking)
