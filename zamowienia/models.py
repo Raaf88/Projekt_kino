@@ -2,6 +2,7 @@ from django.db import models
 from mspot.models import Movie
 
 
+
 class Zamowienie(models.Model):
     imie = models.CharField(max_length=50)
     nazwisko = models.CharField(max_length=50)

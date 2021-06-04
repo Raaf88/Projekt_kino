@@ -3,6 +3,8 @@ from django.db import models
 from django.urls import reverse
 
 
+
+
 class Category(models.Model):
     name = models.CharField(max_length=180, db_index=True)
     slug = models.SlugField(max_length=180, db_index=True, unique=True)
@@ -26,7 +28,7 @@ class Movie(models.Model):
     rok_produkcji = models.IntegerField(validators=[MinValueValidator(1900),
                                        MaxValueValidator(2030)], null=True)
     slug = models.SlugField(max_length=180, db_index=True)
-    movie_poster = models.ImageField(upload_to='movies/', blank=False, default='posters/brakobrazu.png')
+    movie_poster = models.ImageField(upload_to='movies/', blank=True, default='posters/brakobrazu.png')
     movie_description = models.TextField(blank=False)
     movie_recenzja = models.TextField(blank=False, default='W tej chwili do tego filmu nie ma dostępnej recenzji')
     price = models.DecimalField(max_digits=6, decimal_places=2)
