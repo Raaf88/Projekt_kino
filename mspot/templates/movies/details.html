@@ -14,10 +14,11 @@ body {
     margin:0;
     padding:0;
     font-family:helvetica, sans-serif;
+    color: #A6ACAF;
 }
 
 h1, h2, h3, h4, h5 , h6 {
-    font-family: 'Ubuntu', sans-serif; font-weight:normal;
+    font-family: 'Ubuntu', sans-serif; font-weight:normal; color: #A6ACAF;
 }
 
 a {
@@ -103,6 +104,7 @@ form p label, form p input {
 form p label {
     font-size:14px;
     padding-bottom:4px;
+
 }
 
 form p input {
@@ -180,7 +182,7 @@ ul.errorlist {
 }
 
 .product-detail .price {
-    color:#333;
+    color:#D0D3D4;
     font-size:28px;
     font-weight:bold;
 }
@@ -332,7 +334,7 @@ ul.errorlist {
   {% else %}
     <h4>Dodaj komentarz</h4>
     <form method="post">
-      {{ comment_form.as_p }}
+      {{ comment_form.as_p }}<br>
       {% csrf_token %}
       <p><input type="submit" value="Dodaj komentarz"></p>
     </form>

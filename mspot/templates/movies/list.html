@@ -6,12 +6,45 @@
 {% endblock %}
 
 {% block content %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(to bottom, #5D6D7E, #17202A)
+}
+* {
+  box-sizing: border-box;
+}
 
+.column {
+  float: left;
+  padding: 2px;
 
-    <div class="col-lg-4  float-left" >
-        <div class="card h-500 p-4 nav-link">
+}
+
+.left {
+  width: 35%;
+}
+
+.right {
+  width: 65%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+
+<div class="row">
+        <div class="col-lg-4  float-left" >
+        <div class="card h-500 p-4 nav-link" >
             <h3>Gatunki</h3>
-                <ul class="list-group-item list-group-item-light">
+                <ul class="list-group-item list-group-item-light" >
                     <li class="list-group-item list-group-item-light" {% if not category %}class="selected"{% endif %}>
                         <a class="list-group-item list-group-item-action list-group-item-light" href="{% url "mspot:movie_list" %}">Wszystkie</a>
                     </li>
@@ -22,15 +55,14 @@
                      {% endfor %}
                 </ul>
         </div>
-    </div>
-
-
-    <div id="main">
+  </div>
+  <div class="column right">
+     <div id="main">
         <h3>{% if category %}{{ category.name }}{% else %}Filmy{% endif %}</h3>
         {% for movie in movies %}
 
                 <div>
-                  <div class="card h-100 p-4">
+                  <div class="card h-40 p-4">
                     <h4>{{movie.name}}</h4>
                       <div class="col-md-4">
                         <a href="{{ movie.get_absolute_url }}"><img src="{{ movie.movie_poster.url }}" alt="{{ movie.name }}"></a><br>
@@ -45,6 +77,13 @@
                 </div>
 
         {% endfor %}
+  </div>
+</div>
+
+
+
+
+
     </div>
 
     <!-- Optional Javascript -->

@@ -115,7 +115,6 @@ class SignUpPageTests(TestCase):
             'last_name': self.last_name,
             'username': self.username,
             'email': self.email,
-
             'password1': self.password,
             'password2': self.password
         })
