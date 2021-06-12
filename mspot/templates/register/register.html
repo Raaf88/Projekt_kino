@@ -147,7 +147,8 @@ a.socialIcon:hover,
     <div class="row">
         <div class="col-md-6">
             <div class="card">
-                <form onsubmit="event.preventDefault()" class="box">
+                <form method="post"  class="box">
+                    {% csrf_token %}
                     <h1>Rejestracja</h1>
                     <p class="text-muted"> Zarejestruj</p>
                      <input type="text" name="first_name" placeholder="Imię">
@@ -156,7 +157,7 @@ a.socialIcon:hover,
                      <input type="text" name="email" placeholder="Email">
                       <input type="password" name="password1" id="inputPassword1"  placeholder="Password" required>
                       <input type="password" name="password2" id="inputPassword2"  placeholder="Confirm Password" required>
-                    <input type="submit" name="" value="Register" href="#">
+                    <input type="submit" name="register" value="Register" href="/">
                 </form>
             </div>
         </div>

@@ -28,7 +28,7 @@
                 <div class="navbar-nav navbar-right">
                   {% if user.is_authenticated %}
                     <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                      <p><a class="nav-link" href="{% url 'password_reset' %}">Zmień hasło</a></p>
+{#                      <p><a class="nav-link" href="{% url 'password_reset' %}">Zmień hasło</a></p>#}
                   {% else %}
                       <p class="nav-link">You are not logged in</p>
                     <a class="nav-link" href="{% url 'login' %}">Login</a>
